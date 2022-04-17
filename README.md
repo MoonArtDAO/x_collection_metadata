@@ -22,22 +22,24 @@ As the object is just a NFT mint, we can take advantage of the standard JSON NFT
 
 | Field      | Description | Required | Example |
 | ----------- | ----------- | ----------- | ----------- |
-| `name`      | The name of the collection       | Yes | `Friendly Frogs` |
-| `description`   | A description of the collection        | Yes | `2,121 Friendly Frogs bringing friendship to the metaverse and protecting the Positivity Pond from bad vibes!` |
-| `image`   | An image representing the collection        | No | `https://arweave.net/t65orC3i_dzdsXmtoa5wC6ZQkCRAeiwM9igf4xK-K2U` |
+| `name`      | The name of the collection.      | Yes | `Friendly Frogs` |
+| `description`   | A description of the collection.       | Yes | `2,121 Friendly Frogs bringing friendship to the metaverse and protecting the Positivity Pond from bad vibes!` |
+| `image`   | An image representing the collection.       | No | `https://arweave.net/t65orC3i_dzdsXmtoa5wC6ZQkCRAeiwM9igf4xK-K2U` |
 
 ### Attributes
+
+The attribute type will be prefixed with `x.` to allow for proper namespacing. Additional standards should use a different prefix to avoid collisions.
 
 | Field      | Description | Required | Example |
 | ----------- | ----------- | ----------- | ----------- |
 | `x_collection_metadata.version` | The version of the `x_collection_metadata` object. Used to denote backwards-incompatible changes in the data format. | Yes | `1` |
-| `id` | A pseudo-unique ID for the collection for consumers to use in URLs. Must match a `[a-z0-9_]` regex. | Yes | `friendly_frogs` |
-| `supply` | The total number of mints in the collection from all sources. | Yes | `2121` |
-| `mints` |  A pointer to a URI containing the complete mint list for the collection. This should be a JSON array. | No | `https://moonrank.app/mint_list/friendly_frog_social_club` |
-| `url.web` |  A link to the collection website. | No | `https://ffsc.io` |
-| `url.twitter` |  A link to the collection Twitter account. | No | `https://twitter.com/FriendlyFrogSC` |
-| `url.discord` |  A link to the collection Discord. | No | `https://discord.gg/friendlyfrogs` |
-| `market.[market].id` |  A marketplace collection ID. | No | `friendly_frog_social_club` |
+| `x.id` | A pseudo-unique ID for the collection for consumers to use in URLs. Must match a `[a-z0-9_]` regex. | Yes | `friendly_frogs` |
+| `x.supply` | The total number of mints in the collection from all sources. | Yes | `2121` |
+| `x.mints` |  A pointer to a URI containing the complete mint list for the collection. This should be a JSON array. | No | `https://arweave.net/5iv5k68DiHw8dD3fhmRUSDgy_seK8KjAWW_GLWOgljI` |
+| `x.url.web` |  A link to the collection website. | No | `https://ffsc.io` |
+| `x.url.twitter` |  A link to the collection Twitter account. | No | `https://twitter.com/FriendlyFrogSC` |
+| `x.url.discord` |  A link to the collection Discord. | No | `https://discord.gg/friendlyfrogs` |
+| `x.market.[market].id` |  A marketplace collection ID. | No | `friendly_frog_social_club` |
 
 ## Example JSON
 
@@ -52,31 +54,31 @@ As the object is just a NFT mint, we can take advantage of the standard JSON NFT
       "value": "1"
     },
     {
-      "trait_type": "id",
+      "trait_type": "x.id",
       "value": "friendly_frogs"
     },
     {
-      "trait_type": "supply",
+      "trait_type": "x.supply",
       "value": "2121"
     },
     {
-      "trait_type": "mints",
-      "value": "https://moonrank.app/mint_list/friendly_frog_social_club"
+      "trait_type": "x.mints",
+      "value": "https://arweave.net/5iv5k68DiHw8dD3fhmRUSDgy_seK8KjAWW_GLWOgljI"
     },
     {
-      "trait_type": "url.web",
+      "trait_type": "x.url.web",
       "value": "https://ffsc.io"
     },
     {
-      "trait_type": "url.twitter",
+      "trait_type": "x.url.twitter",
       "value": "https://twitter.com/FriendlyFrogSC"
     },
     {
-      "trait_type": "url.discord",
+      "trait_type": "x.url.discord",
       "value": "https://discord.gg/friendlyfrogs"
     },
     {
-      "trait_type": "market.magiceden.id",
+      "trait_type": "x.market.magiceden.id",
       "value": "friendly_frog_social_club"
     }
   ]
