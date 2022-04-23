@@ -36,6 +36,7 @@ The attribute type will be prefixed with `x.` to allow for proper namespacing. A
 | `x.id` | A pseudo-unique ID for the collection for consumers to use in URLs. Must match a `[a-z0-9_]` regex. | Yes | `friendly_frogs` |
 | `x.supply` | The total number of mints in the collection from all sources. | Yes | `2121` |
 | `x.mints` |  A pointer to a URI containing the complete mint list for the collection. This should be a JSON array. | No | `https://arweave.net/5iv5k68DiHw8dD3fhmRUSDgy_seK8KjAWW_GLWOgljI` |
+| `x.mints.integrity` |  An integrity hash of the contents of the `x.mints` file. Follows the W3C [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) standard. | No | `sha384-HfsDXK3RbMkuHqh5yIf3+vNbTHGweqRc1uImBv61t8JXxI4pGzZQwrC7vnDz5NnP` |
 | `x.url.web` |  A link to the collection website. | No | `https://ffsc.io` |
 | `x.url.twitter` |  A link to the collection Twitter account. | No | `https://twitter.com/FriendlyFrogSC` |
 | `x.url.discord` |  A link to the collection Discord. | No | `https://discord.gg/friendlyfrogs` |
@@ -65,6 +66,10 @@ The attribute type will be prefixed with `x.` to allow for proper namespacing. A
       "trait_type": "x.mints",
       "value": "https://arweave.net/5iv5k68DiHw8dD3fhmRUSDgy_seK8KjAWW_GLWOgljI"
     },
+    {
+      "trait_type": "x.mints.integrity",
+      "value": "sha384-HfsDXK3RbMkuHqh5yIf3+vNbTHGweqRc1uImBv61t8JXxI4pGzZQwrC7vnDz5NnP"
+    },    
     {
       "trait_type": "x.url.web",
       "value": "https://ffsc.io"
